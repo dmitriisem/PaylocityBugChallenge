@@ -63,7 +63,7 @@ Table field names are shifted after adding a new employee to the table.
 
 **Description:**
 
-UI doesn't show an error when trying to add more than 32 dependencies, but API response shows that error "The field Dependants must be between 0 and 32" should be displayed.
+UI doesn't show an error when trying to add more than 32 dependencies, but API throws HTTP code "400" and response body shows that error "The field Dependants must be between 0 and 32" should be displayed.
 
 **Preconditions:**
 Logged in user with valid credentials;
@@ -82,3 +82,32 @@ Error message does not appear.
 **Attachments:**
 
 ![Preview](/images/Bug3.gif)
+
+* * *  
+### Bug 4. UI doesn't show an error when trying to add a negative or non-integer number in the "Dependants" field
+* * *
+**Priority:** Medium
+
+**Description:**
+
+UI doesn't show an error when trying to add a negative or non-integer number in the "Dependants" field. 
+For example if adding a new employee and typing numbers like "15.5" or "-25" in the "Dependants" field - UI won't show an error message and won't add a new employee.
+If adding a number that starts from 0 ( like 0003) - UI won't show an error message and add a new employee to the table.
+
+**Preconditions:**
+Logged in user with valid credentials;
+
+**Steps to reproduce:**
+1) Click on "Add Employee" button;
+2) Fill out "First Name" and "Last Name" fields and type non integer number in the "Dependants" field (e.g 15.5 or - 21 or 00025)
+3) Click "Add" button;
+
+**Expected result:**
+An error message should appear and a new employee was not added to the table.
+
+**Actual result:**
+Error message does not appear and a new employee was added to the table if a zero-based number was used.
+
+**Attachments:**
+
+![Preview](/images/Bug4.gif)
