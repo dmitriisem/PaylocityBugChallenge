@@ -1,17 +1,16 @@
-# PaylocityBugChallenge
+# Paylocity Bug Challenge
 
 Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 * * *  
-##### Bug 1.
+### Bug 1. First name and Last name are displayed incorrectly
 * * *
-##### Title: First name and Last name are displayed incorrectly
-##### Priority: Medium
-##### Description:
+###### Priority: Medium
+###### Description:
 The first and Last names are displayed incorrectly in the Employees table. Last name is displayed instead of First name and vice versa.
-##### Preconditions:
+###### Preconditions:
 Logged in user with valid credentials;
-##### Steps to reproduce:
+###### Steps to reproduce:
 1) Click on "Add Employee" button;
 2) Fill out opened form with your First Name, Last Name and Dependants number;
 3) Click "Add" button;
