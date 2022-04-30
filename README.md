@@ -26,4 +26,5 @@ All the data in the Employee table is displayed correctly and the content of the
 First name and Last name are displayed incorrectly. Column "First Name" shows actual Last Name and column "Last Name" shows actual First Name.
 
 6) **Attachments:**
+
 ![Preview](/images/Bug1.gif)
