@@ -165,3 +165,57 @@ Error message does not appear.
 **Attachments:**
 
 ![Preview](/images/Bug6.gif)
+
+* * *  
+### Bug 7. The aesthetic appearance of the table is deformed when too long string used for "Last Name" or "First Name" fields
+* * *
+**Priority:** Medium
+
+**Description:**
+
+The aesthetic appearance of the table is deformed when too long string used for "Last Name" or "First Name" fields when adding new employee
+
+**Preconditions:**
+Logged in user with valid credentials;
+
+**Steps to reproduce:**
+1) Click on "Add Employee" button;
+2) Use long string (e.g 50 symbols) when filling "First Name" and "Last Name" fields;
+3) Click "Add" button;
+
+**Expected result:**
+The size of the table fields does not change and table fields don't move after adding a new employee to it.
+
+**Actual result:**
+Size of tables and the general view of the table changes.
+
+**Attachments:**
+
+![Preview](/images/Bug7.gif)
+
+* * *  
+### Bug 8. No error message shown when "Last Name" or "First Name" field is empty
+* * *
+**Priority:** Medium
+
+**Description:**
+
+UI doesn't show an error when leave "Last Name" or "First Name" field empty during new employee adding, but API throws HTTP code "400" and response body shows that error "The FirstName/LastName field is required." should be displayed.
+
+**Preconditions:**
+Logged in user with valid credentials;
+
+**Steps to reproduce:**
+1) Click on "Add Employee" button;
+2) Leave Last Name or/and First Name field empty;
+3) Click "Add" button;
+
+**Expected result:**
+An error message "The FirstName/LastName field is required." should appear
+
+**Actual result:**
+Error message does not appear.
+
+**Attachments:**
+
+![Preview](/images/Bug8.gif)
