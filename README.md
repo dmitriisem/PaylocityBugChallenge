@@ -273,3 +273,27 @@ Informational message not shown.
 **Attachments:**
 
 ![Preview](/images/Bug10.gif)
+
+* * *  
+### Bug 11. App randomly logs out user
+* * *
+**Priority:** High
+
+**Description:**
+
+Application randomly logging out user. Sometimes after page reload, sometimes after a few minutes of inactivity. No error message shown.
+
+**Steps to reproduce:**
+1) Log in to application using valid credentials;
+2) Wait for a few minutes (e.g 5 min);
+3) After 5 min try to add a new employee or delete existing record;
+
+**Expected result:**
+User able to add a new record or modify existing one.
+
+**Actual result:**
+User logged out from the app.
+
+**Attachments:**
+
+![Preview](/images/Bug11.gif)
