@@ -228,6 +228,7 @@ Error message does not appear.
 **Description:**
 
 UI doesn't show an error when leave "Dependants" field empty and adds a new employee with 0 dependants.
+
 **Preconditions:**
 Logged in user with valid credentials;
 
@@ -254,6 +255,7 @@ Error message does not appear and a new employee is added to the table with 0 de
 **Description:**
 
 UI doesn't show an informational message when creating/modifying/deleting a record.
+
 **Preconditions:**
 Logged in user with valid credentials;
 
