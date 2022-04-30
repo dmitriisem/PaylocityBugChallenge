@@ -57,7 +57,7 @@ Table field names are shifted after adding a new employee to the table.
 ![Preview](/images/Bug2.gif)
 
 * * *  
-### Bug 3. UI doesn't show an error when trying to add more than 32 dependencies
+### Bug 3. UI doesn't show an error when trying to add more than 32 Dependants
 * * *
 **Priority:** Medium
 
@@ -84,7 +84,7 @@ Error message does not appear.
 ![Preview](/images/Bug3.gif)
 
 * * *  
-### Bug 4. UI doesn't show an error when trying to add a negative or non-integer number in the "Dependants" field
+### Bug 4. No error message when trying to add a negative or non-integer number in the "Dependants" field
 * * *
 **Priority:** Medium
 
@@ -106,8 +106,62 @@ Logged in user with valid credentials;
 An error message should appear and a new employee was not added to the table.
 
 **Actual result:**
-Error message does not appear and a new employee was added to the table if a zero-based number was used.
+Error message does not appear and a new employee is added to the table if a zero-based number was used.
 
 **Attachments:**
 
 ![Preview](/images/Bug4.gif)
+
+* * *  
+### Bug 5. No error message shown when using special characters in the "Last Name" and "First Name" fields
+* * *
+**Priority:** High
+
+**Description:**
+
+UI doesn't show an error when using special characters or numbers (e.g %#$) in the "First Name" and "Last Name" fields and allows to add a new employee to the table
+
+**Preconditions:**
+Logged in user with valid credentials;
+
+**Steps to reproduce:**
+1) Click on "Add Employee" button;
+2) Use special characters and numbers when filling "First Name" and "Last Name" fields
+3) Click "Add" button;
+
+**Expected result:**
+An error message should appear and a new employee was not added to the table.
+
+**Actual result:**
+Error message does not appear and a new employee is added to the table.
+
+**Attachments:**
+
+![Preview](/images/Bug5.gif)
+
+* * *  
+### Bug 6. No error message shown when using too long string in the "Last Name" and "First Name" fields
+* * *
+**Priority:** Medium
+
+**Description:**
+
+UI doesn't show an error when using too long string in the "Last Name" and "First Name" fields, but API throws HTTP code "400" and response body shows that error "The field FirstName/LastName must be a string with a maximum length of 50" should be displayed.
+
+**Preconditions:**
+Logged in user with valid credentials;
+
+**Steps to reproduce:**
+1) Click on "Add Employee" button;
+2) Use string over 50 symbols when filling "First Name" and "Last Name" fields
+3) Click "Add" button;
+
+**Expected result:**
+An error message "The field FirstName/LastName must be a string with a maximum length of 50" should appear
+
+**Actual result:**
+Error message does not appear.
+
+**Attachments:**
+
+![Preview](/images/Bug6.gif)
