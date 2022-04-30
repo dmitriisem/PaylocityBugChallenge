@@ -2,7 +2,9 @@
 
 Defects found as a result of testing Paylocity Benefits Dashboard application:
 
+* * *  
 ##### Bug 1.
+* * *
 ##### Title: First name and Last name are displayed incorrectly
 ##### Priority: Medium
 ##### Description:
