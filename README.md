@@ -55,3 +55,30 @@ Table field names are shifted after adding a new employee to the table.
 **Attachments:**
 
 ![Preview](/images/Bug2.gif)
+
+* * *  
+### Bug 3. UI doesn't show an error when trying to add more than 32 dependencies
+* * *
+**Priority:** Medium
+
+**Description:**
+
+UI doesn't show an error when trying to add more than 32 dependencies, but API response shows that error "The field Dependants must be between 0 and 32" should be displayed.
+
+**Preconditions:**
+Logged in user with valid credentials;
+
+**Steps to reproduce:**
+1) Click on "Add Employee" button;
+2) Fill out "First Name" and "Last Name" fields and type any number in the "Dependants" field between 33 and infinity;
+3) Click "Add" button;
+
+**Expected result:**
+An error message should appear "The field Dependants must be between 0 and 32".
+
+**Actual result:**
+Error message does not appear. 
+
+**Attachments:**
+
+![Preview](/images/Bug3.gif)
