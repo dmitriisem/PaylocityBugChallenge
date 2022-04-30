@@ -180,7 +180,7 @@ Logged in user with valid credentials;
 
 **Steps to reproduce:**
 1) Click on "Add Employee" button;
-2) Use long string (e.g 50 symbols) when filling "First Name" and "Last Name" fields;
+2) Use long string (e.g 40 symbols) when filling "First Name" and "Last Name" fields;
 3) Click "Add" button;
 
 **Expected result:**
@@ -207,7 +207,7 @@ Logged in user with valid credentials;
 
 **Steps to reproduce:**
 1) Click on "Add Employee" button;
-2) Leave Last Name or/and First Name field empty;
+2) Leave "Last Name" or/and "First Name" field empty;
 3) Click "Add" button;
 
 **Expected result:**
@@ -219,3 +219,55 @@ Error message does not appear.
 **Attachments:**
 
 ![Preview](/images/Bug8.gif)
+
+* * *  
+### Bug 9. No error message shown when "Dependants" field is empty
+* * *
+**Priority:** Medium
+
+**Description:**
+
+UI doesn't show an error when leave "Dependants" field empty and adds a new employee with 0 dependants.
+**Preconditions:**
+Logged in user with valid credentials;
+
+**Steps to reproduce:**
+1) Click on "Add Employee" button;
+2) Leave "Dependants" field empty;
+3) Click "Add" button;
+
+**Expected result:**
+An error message should appear and a new employee should not be added to the table.
+
+**Actual result:**
+Error message does not appear and a new employee is added to the table with 0 dependants.
+
+**Attachments:**
+
+![Preview](/images/Bug9.gif)
+
+* * *  
+### Bug 10. No informational message when creating/modifying/deleting a record
+* * *
+**Priority:** Low
+
+**Description:**
+
+UI doesn't show an informational message when creating/modifying/deleting a record.
+**Preconditions:**
+Logged in user with valid credentials;
+
+**Steps to reproduce:**
+1) Click on "Add Employee" button;
+2) Fill out opened form with your First Name, Last Name and Dependants number;
+3) Click "Add" button;
+
+**Expected result:**
+informational message like "New record was added to the table" is shown
+
+**Actual result:**
+Informational message not shown.
+
+**Attachments:**
+
+![Preview](/images/Bug10.gif)
