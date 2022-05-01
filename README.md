@@ -26,6 +26,14 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 [Bug 12. API HTTP code 500 when adding Not A Number to request body](#bug-12-api-http-code-500-when-adding-not-a-number-to-request-body)
 
+[Bug 13. API allows to add additional fields to POST and PUT requests body and not throws an error](#bug-13-api-allows-to-add-additional-fields-to-post-and-put-requests-body-and-not-throws-an-error)
+
+[Bug 10. No UI or API informational message when creating/modifying/deleting a record](#bug-10-no-ui-or-api-informational-message-when-creatingmodifyingdeleting-a-record)
+
+[Bug 11. App randomly logs out current user](#bug-11-app-randomly-logs-out-current-user)
+
+[Bug 12. API HTTP code 500 when adding Not A Number to request body](#bug-12-api-http-code-500-when-adding-not-a-number-to-request-body)
+
 * * *  
 ### Bug 1. First name and Last name are displayed incorrectly
 * * *
