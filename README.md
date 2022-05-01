@@ -369,7 +369,7 @@ DELETE method allows to delete the same record multiple times without any errors
 **Steps to reproduce:**
 1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
 2) Add Headers: "Content-Type application/json" and "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
-3) Add an JSON Object: " {
+3) Add JSON Object to the request body: " {
    "firstName": "Dmitrii",
    "lastName": "Semm",
    "dependants": 15
@@ -402,7 +402,7 @@ API allows to use GET method on deleted record. API shows "200" status code and 
 **Steps to reproduce:**
 1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
 2) Add Headers: "Content-Type application/json" and "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
-3) Add an JSON Object: " {
+3) Add JSON Object to the request body: " {
    "firstName": "Dmitrii",
    "lastName": "Semm",
    "dependants": 15
@@ -437,7 +437,7 @@ API allows to use PUT method on deleted record. API shows "200" status code and 
 **Steps to reproduce:**
 1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
 2) Add Headers: "Content-Type application/json" and "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
-3) Add an JSON Object: " {
+3) Add JSON Object to the request body: " {
    "firstName": "Dmitrii",
    "lastName": "Semm",
    "dependants": 15
@@ -446,9 +446,9 @@ API allows to use PUT method on deleted record. API shows "200" status code and 
 5) Create DELETE request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees"+ ID from the previous step end point;
 6) Add Headers: "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
 7) Send request;
-8) Create GET request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees";
-9) Add Headers: "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
-10) Add an JSON Object to the request body: " {
+8) Create PUT request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees";
+9) Add Headers: "Content-Type application/json" and "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+10) Add JSON Object to the request body: " {
     "firstName": "Dmitrii",
     "lastName": "Semm",
     "dependants": 15
