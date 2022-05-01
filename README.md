@@ -289,11 +289,39 @@ Application randomly logging out user. Sometimes after page reload, sometimes af
 3) After 5 min try to add a new employee or delete existing record;
 
 **Expected result:**
-User able to add a new record or modify existing one.
+User able to add a new record or modify existing one and no API errors.
 
 **Actual result:**
-User logged out from the app.
+User logged out from the app and API "401" HTTP response code shown.
 
 **Attachments:**
 
 ![Preview](/images/Bug11.gif)
+
+* * *  
+### Bug 12. API HTTP code 500 when adding Not A Number to request body
+* * *
+**Priority:** Low
+
+**Description:**
+
+Postman throws API HTTP response code "500" when adding Not A Number or A Number with decimal part. Should throw "400" code and an error message.
+
+**Steps to reproduce:**
+1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
+2) Add Headers: "Content-Type application/json" and "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+3) Add an JSON Object: " {
+   "firstName": "Dmitrii",
+   "lastName": "Semm",
+   "dependants": 15.5
+   }"
+
+**Expected result:**
+HTTP Code "400" "Bad Request" and error message shown in response body.
+
+**Actual result:**
+HTTP Code "500" shown and no error message.
+
+**Attachments:**
+
+![Preview](/images/Bug12.gif)
