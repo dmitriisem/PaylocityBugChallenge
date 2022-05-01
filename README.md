@@ -429,7 +429,7 @@ Success "200" code shown.
 
 **Description:**
 
-API allows to use GET method on deleted record. API shows "200" status code and shows and empty body of the deleted record.
+API allows to use GET method on deleted record. API shows "200" status code and an empty response body of the deleted record.
 
 **Steps to reproduce:**
 1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
@@ -464,7 +464,7 @@ Success "200" code end empty response body shown.
 
 **Description:**
 
-API allows to use PUT method on deleted record. API shows "200" status code and shows and a response body with empty "salary" and "gross" fields + negative value in the "net" field.
+API allows to use PUT method on deleted record. API shows "200" status code and shows a response body with an empty "salary" and "gross" fields + negative value in the "net" field.
 
 **Steps to reproduce:**
 1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
