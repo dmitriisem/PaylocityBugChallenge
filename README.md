@@ -325,3 +325,32 @@ HTTP Code "500" shown and no error message.
 **Attachments:**
 
 ![Preview](/images/Bug12.gif)
+
+* * *  
+### Bug 13. API allows to add additional fields to POST and PUT requests body and not throws an error
+* * *
+**Priority:** Low
+
+**Description:**
+
+POST and PUT requests allows to add additional field to its request body. Requests with additional field are successful and show code "200". Additional fields are ignored in the response body.
+
+**Steps to reproduce:**
+1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
+2) Add Headers: "Content-Type application/json" and "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+3) Add an JSON Object: " {
+   "firstName": "Dmitrii",
+   "lastName": "Semm",
+   "Age": 27,
+   "dependants": 15
+   }"
+
+**Expected result:**
+HTTP Code "400" "Bad Request" and error message shown in response body.
+
+**Actual result:**
+HTTP Code "200" shown and no error message.
+
+**Attachments:**
+
+![Preview](/images/Bug13.gif)
