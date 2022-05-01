@@ -14,6 +14,18 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 [Bug 6. No error message shown when using too long string in the "Last Name" and "First Name" fields](#bug-6-no-error-message-shown-when-using-too-long-string-in-the-last-name-and-first-name-fields)
 
+[Bug 7. The aesthetic appearance of the table is deformed when too long string used for "Last Name" or "First Name" fields](#bug-7-the-aesthetic-appearance-of-the-table-is-deformed-when-too-long-string-used-for-last-name-or-first-name-fields)
+
+[Bug 2. The size of table fields changes after adding an employee](#bug-2-the-size-of-table-fields-changes-after-adding-an-employee)
+
+[Bug 3. UI doesn't show an error when trying to add more than 32 Dependants](#bug-3-ui-doesnt-show-an-error-when-trying-to-add-more-than-32-dependants)
+
+[Bug 4. No error message when trying to add a negative or non-integer number in the "Dependants" field](#bug-4-no-error-message-when-trying-to-add-a-negative-or-non-integer-number-in-the-dependants-field)
+
+[Bug 5. No error message shown when using special characters in the "Last Name" and "First Name" fields](#bug-5-no-error-message-shown-when-using-special-characters-in-the-last-name-and-first-name-fields)
+
+[Bug 6. No error message shown when using too long string in the "Last Name" and "First Name" fields](#bug-6-no-error-message-shown-when-using-too-long-string-in-the-last-name-and-first-name-fields)
+
 * * *  
 ### Bug 1. First name and Last name are displayed incorrectly
 * * *
