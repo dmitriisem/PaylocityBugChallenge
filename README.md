@@ -22,7 +22,7 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 [Bug 10. No UI or API informational message when creating/modifying/deleting a record](#bug-10-no-ui-or-api-informational-message-when-creatingmodifyingdeleting-a-record)
 
-[Bug 5. No error message shown when using special characters in the "Last Name" and "First Name" fields](#bug-5-no-error-message-shown-when-using-special-characters-in-the-last-name-and-first-name-fields)
+[Bug 11. App randomly logs out current user](#bug-11-app-randomly-logs-out-current-user)
 
 [Bug 6. No error message shown when using too long string in the "Last Name" and "First Name" fields](#bug-6-no-error-message-shown-when-using-too-long-string-in-the-last-name-and-first-name-fields)
 
@@ -299,7 +299,7 @@ Informational message not shown.
 ![Preview](/images/Bug10.gif)
 
 * * *  
-### Bug 11. App randomly logs out user
+### Bug 11. App randomly logs out current user
 * * *
 **Priority:** High
 
