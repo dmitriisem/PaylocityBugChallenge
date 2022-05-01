@@ -12,7 +12,7 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 [Bug 5. No error message shown when using special characters in the "Last Name" and "First Name" fields](#bug-5-no-error-message-shown-when-using-special-characters-in-the-last-name-and-first-name-fields)
 
-[Bug 3. UI doesn't show an error when trying to add more than 32 Dependants](#bug-3-ui-doesnt-show-an-error-when-trying-to-add-more-than-32-dependants)
+[Bug 6. No error message shown when using too long string in the "Last Name" and "First Name" fields](#bug-6-no-error-message-shown-when-using-too-long-string-in-the-last-name-and-first-name-fields)
 
 * * *  
 ### Bug 1. First name and Last name are displayed incorrectly
