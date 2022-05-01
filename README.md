@@ -432,7 +432,7 @@ Success "200" code end empty response body shown.
 
 **Description:**
 
-API allows to use PUT method on deleted record. API shows "200" status code and shows and a response body with empty "salary" and "gross" fields. Also it shows
+API allows to use PUT method on deleted record. API shows "200" status code and shows and a response body with empty "salary" and "gross" fields + negative value in the "net" field.
 
 **Steps to reproduce:**
 1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
@@ -459,7 +459,7 @@ API allows to use PUT method on deleted record. API shows "200" status code and 
 One of the "400" error codes shown and error message in the response body.
 
 **Actual result:**
-Success "200" code end empty response body shown.
+Success "200" code end a response body with empty "salary" and "gross" fields + negative value in the "net" field shown.
 
 **Attachments:**
 
