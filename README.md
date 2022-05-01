@@ -8,6 +8,12 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 [Bug 3. UI doesn't show an error when trying to add more than 32 Dependants](#bug-3-ui-doesnt-show-an-error-when-trying-to-add-more-than-32-dependants)
 
+[Bug 4. No error message when trying to add a negative or non-integer number in the "Dependants" field](#bug-4-no-error-message-when-trying-to-add-a-negative-or-non-integer-number-in-the-dependants-field)
+
+[Bug 5. No error message shown when using special characters in the "Last Name" and "First Name" fields](#bug-5-no-error-message-shown-when-using-special-characters-in-the-last-name-and-first-name-fields)
+
+[Bug 3. UI doesn't show an error when trying to add more than 32 Dependants](#bug-3-ui-doesnt-show-an-error-when-trying-to-add-more-than-32-dependants)
+
 * * *  
 ### Bug 1. First name and Last name are displayed incorrectly
 * * *
