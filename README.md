@@ -24,7 +24,7 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 [Bug 11. App randomly logs out current user](#bug-11-app-randomly-logs-out-current-user)
 
-[Bug 6. No error message shown when using too long string in the "Last Name" and "First Name" fields](#bug-6-no-error-message-shown-when-using-too-long-string-in-the-last-name-and-first-name-fields)
+[Bug 12. API HTTP code 500 when adding Not A Number to request body](#bug-12-api-http-code-500-when-adding-not-a-number-to-request-body)
 
 * * *  
 ### Bug 1. First name and Last name are displayed incorrectly
