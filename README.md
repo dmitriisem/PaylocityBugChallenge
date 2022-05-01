@@ -16,7 +16,7 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 [Bug 7. The aesthetic appearance of the table is deformed when too long string used for "Last Name" or "First Name" fields](#bug-7-the-aesthetic-appearance-of-the-table-is-deformed-when-too-long-string-used-for-last-name-or-first-name-fields)
 
-[Bug 2. The size of table fields changes after adding an employee](#bug-2-the-size-of-table-fields-changes-after-adding-an-employee)
+[Bug 8. No error message shown when "Last Name" or "First Name" field is empty](#bug-8-no-error-message-shown-when-last-name-or-first-name-field-is-empty)
 
 [Bug 3. UI doesn't show an error when trying to add more than 32 Dependants](#bug-3-ui-doesnt-show-an-error-when-trying-to-add-more-than-32-dependants)
 
