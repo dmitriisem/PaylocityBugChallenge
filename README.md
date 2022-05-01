@@ -2,14 +2,14 @@
 
 Defects found as a result of testing Paylocity Benefits Dashboard application:
 
-[Bug 1](/README.md#Bug-1.-First-name-and-Last-name-are-displayed-incorrectly)
+[Bug 1. First name and Last name are displayed incorrectly](#Bug-1.-First-name-and-Last-name-are-displayed-incorrectly)
 
 [Bug 2](/README.md#bug-2.-The-size-of-table-fields-changes-after-adding-an-employee)
 
 [Bug 3](#bug-3.-UI doesn't show an error when trying to add more than 32 Dependants)
 
 * * *  
-### Bug 1. First name and Last name are displayed incorrectly
+## Bug 1. First name and Last name are displayed incorrectly
 * * *
 **Priority:** Medium
 
