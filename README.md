@@ -30,7 +30,7 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 [Bug 14. API allows to DELETE the same record multiple times](#bug-14-api-allows-to-delete-the-same-record-multiple-times)
 
-[Bug 11. App randomly logs out current user](#bug-11-app-randomly-logs-out-current-user)
+[Bug 15. API allows to use GET method on deleted record](#bug-15-api-allows-to-use-get-method-on-deleted-record)
 
 [Bug 12. API HTTP code 500 when adding Not A Number to request body](#bug-12-api-http-code-500-when-adding-not-a-number-to-request-body)
 
