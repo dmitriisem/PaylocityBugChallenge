@@ -381,7 +381,7 @@ DELETE method allows to delete the same record multiple times without any errors
 8) Send the same DELETE request again;
 
 **Expected result:**
-One of the "400" error codes shown. 
+One of the "400" error codes shown and error message in the response body.
 
 **Actual result:**
 Success "200" code shown.
@@ -389,3 +389,78 @@ Success "200" code shown.
 **Attachments:**
 
 ![Preview](/images/Bug14.gif)
+
+* * *  
+### Bug 15. API allows to use GET method on deleted record
+* * *
+**Priority:** High
+
+**Description:**
+
+API allows to use GET method on deleted record. API shows "200" status code and shows and empty body of the deleted record.
+
+**Steps to reproduce:**
+1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
+2) Add Headers: "Content-Type application/json" and "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+3) Add an JSON Object: " {
+   "firstName": "Dmitrii",
+   "lastName": "Semm",
+   "dependants": 15
+   }"
+4) Save Id from the response body;
+5) Create DELETE request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees"+ ID from the previous step end point;
+6) Add Headers: "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+7) Send request;
+8) Create GET request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees"+ ID from the previous step end point;
+9) Add Headers: "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+10) Send request;
+
+**Expected result:**
+One of the "400" error codes shown and error message in the response body.
+
+**Actual result:**
+Success "200" code end empty response body shown.
+
+**Attachments:**
+
+![Preview](/images/Bug15.gif)
+
+* * *  
+### Bug 16. API allows to use PUT method on deleted record
+* * *
+**Priority:** High
+
+**Description:**
+
+API allows to use PUT method on deleted record. API shows "200" status code and shows and a response body with empty "salary" and "gross" fields. Also it shows
+
+**Steps to reproduce:**
+1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
+2) Add Headers: "Content-Type application/json" and "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+3) Add an JSON Object: " {
+   "firstName": "Dmitrii",
+   "lastName": "Semm",
+   "dependants": 15
+   }"
+4) Save Id from the response body;
+5) Create DELETE request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees"+ ID from the previous step end point;
+6) Add Headers: "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+7) Send request;
+8) Create GET request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees";
+9) Add Headers: "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+10) Add an JSON Object to the request body: " {
+    "firstName": "Dmitrii",
+    "lastName": "Semm",
+    "dependants": 15
+    }"
+11) Send request;
+
+**Expected result:**
+One of the "400" error codes shown and error message in the response body.
+
+**Actual result:**
+Success "200" code end empty response body shown.
+
+**Attachments:**
+
+![Preview](/images/Bug16.gif)
