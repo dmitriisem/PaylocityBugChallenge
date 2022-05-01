@@ -315,6 +315,7 @@ Postman throws API HTTP response code "500" when adding Not A Number or A Number
    "lastName": "Semm",
    "dependants": 15.5
    }"
+4) Send request;
 
 **Expected result:**
 HTTP Code "400" "Bad Request" and error message shown in response body.
@@ -344,6 +345,7 @@ POST and PUT requests allows to add additional field to its request body. Reques
    "Age": 27,
    "dependants": 15
    }"
+4) Send request;
 
 **Expected result:**
 HTTP Code "400" "Bad Request" and error message shown in response body.
@@ -354,3 +356,36 @@ HTTP Code "200" shown and no error message.
 **Attachments:**
 
 ![Preview](/images/Bug13.gif)
+
+* * *  
+### Bug 14. API allows to DELETE the same record multiple times
+* * *
+**Priority:** Medium
+
+**Description:**
+
+DELETE method allows to delete the same record multiple times without any errors. API always shows "200" success response code.
+
+**Steps to reproduce:**
+1) Create POST request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees" end point;
+2) Add Headers: "Content-Type application/json" and "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+3) Add an JSON Object: " {
+   "firstName": "Dmitrii",
+   "lastName": "Semm",
+   "dependants": 15
+   }"
+4) Save Id from the response body;
+5) Create DELETE request using "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees"+ ID from the previous step end point;
+6) Add Headers: "Authorization Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080";
+7) Send request;
+8) Send the same DELETE request again;
+
+**Expected result:**
+One of the "400" error codes shown. 
+
+**Actual result:**
+Success "200" code shown.
+
+**Attachments:**
+
+![Preview](/images/Bug14.gif)
