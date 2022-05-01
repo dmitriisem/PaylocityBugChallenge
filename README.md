@@ -1,6 +1,10 @@
 # Paylocity Bug Challenge
 
 Defects found as a result of testing Paylocity Benefits Dashboard application:
+1. [Bug 1. First name and Last name are displayed incorrectly](#Bug 1.-First name and Last name are displayed incorrectly)
+2. [Bug 2. The size of table fields changes after adding an employee](#Bug 2.-The size of table fields changes after adding an employee)
+3. [Bug 3. UI doesn't show an error when trying to add more than 32 Dependants](#Bug 3.-UI doesn't show an error when trying to add more than 32 Dependants)
+4. [Defects](#defects)
 
 * * *  
 ### Bug 1. First name and Last name are displayed incorrectly
@@ -248,13 +252,13 @@ Error message does not appear and a new employee is added to the table with 0 de
 ![Preview](/images/Bug9.gif)
 
 * * *  
-### Bug 10. No informational message when creating/modifying/deleting a record
+### Bug 10. No UI or API informational message when creating/modifying/deleting a record
 * * *
 **Priority:** Low
 
 **Description:**
 
-UI doesn't show an informational message when creating/modifying/deleting a record.
+UI and API doesn't show an informational message when creating/modifying/deleting a record.
 
 **Preconditions:**
 Logged in user with valid credentials;
