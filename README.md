@@ -28,7 +28,7 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 [Bug 13. API allows to add additional fields to POST and PUT requests body and not throws an error](#bug-13-api-allows-to-add-additional-fields-to-post-and-put-requests-body-and-not-throws-an-error)
 
-[Bug 10. No UI or API informational message when creating/modifying/deleting a record](#bug-10-no-ui-or-api-informational-message-when-creatingmodifyingdeleting-a-record)
+[Bug 14. API allows to DELETE the same record multiple times](#bug-14-api-allows-to-delete-the-same-record-multiple-times)
 
 [Bug 11. App randomly logs out current user](#bug-11-app-randomly-logs-out-current-user)
 
