@@ -18,9 +18,9 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 
 [Bug 8. No error message shown when "Last Name" or "First Name" field is empty](#bug-8-no-error-message-shown-when-last-name-or-first-name-field-is-empty)
 
-[Bug 3. UI doesn't show an error when trying to add more than 32 Dependants](#bug-3-ui-doesnt-show-an-error-when-trying-to-add-more-than-32-dependants)
+[Bug 9. No error message shown when "Dependants" field is empty](#bug-9-no-error-message-shown-when-dependants-field-is-empty)
 
-[Bug 4. No error message when trying to add a negative or non-integer number in the "Dependants" field](#bug-4-no-error-message-when-trying-to-add-a-negative-or-non-integer-number-in-the-dependants-field)
+[Bug 10. No UI or API informational message when creating/modifying/deleting a record](#bug-10-no-ui-or-api-informational-message-when-creatingmodifyingdeleting-a-record)
 
 [Bug 5. No error message shown when using special characters in the "Last Name" and "First Name" fields](#bug-5-no-error-message-shown-when-using-special-characters-in-the-last-name-and-first-name-fields)
 
