@@ -37,7 +37,7 @@ Defects found as a result of testing Paylocity Benefits Dashboard application:
 * * *  
 ### Bug 1. First name and Last name are displayed incorrectly
 * * *
-**Priority:** Medium
+**Priority:** High
 
 **Description:**
 
@@ -255,7 +255,7 @@ Error message does not appear.
 * * *  
 ### Bug 9. No error message shown when "Dependants" field is empty
 * * *
-**Priority:** Medium
+**Priority:** High
 
 **Description:**
 
