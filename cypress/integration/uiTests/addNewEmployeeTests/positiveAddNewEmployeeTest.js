@@ -9,6 +9,7 @@ describe('Positive test for "add new employee" feature', () => {
     const loginPage = new LoginPage();
     const dashBoardPage = new DashboardPage();
     const addNewEmployeePage = new AddNewEmployeePage();
+
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
     const dependantNum = faker.datatype.number({
@@ -25,4 +26,4 @@ describe('Positive test for "add new employee" feature', () => {
             dashBoardPage.checkNewRecordOnUI(id, firstName, lastName, dependantNum);
         });
     });
-})
+});

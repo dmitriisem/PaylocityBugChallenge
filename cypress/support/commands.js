@@ -72,7 +72,7 @@ Cypress.Commands.add('postNewRecord', () => {
         const net = response.body.net;
         const arr = [id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net];
         cy.wrap(arr)
-    })
+    });
 });
 
 Cypress.Commands.add('deleteRecord', (recordId) => {
