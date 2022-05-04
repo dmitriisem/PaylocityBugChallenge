@@ -2,7 +2,7 @@ import faker from "@faker-js/faker";
 
 describe('PUT request via Cypress', () => {
 
-    it('should test PUT request', function () {
+    it('should test PUT request use before use after', function () {
 
         cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
             const newFirstName = faker.name.firstName();

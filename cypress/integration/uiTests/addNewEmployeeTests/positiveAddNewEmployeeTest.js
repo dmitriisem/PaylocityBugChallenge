@@ -6,12 +6,6 @@ import faker from "@faker-js/faker";
 
 describe('Positive test for "add new employee" feature', () => {
 
-    afterEach(() => {
-        cy.get('@id').then((id) => {
-            cy.deleteRecord(id);
-        })
-    })
-
     const loginPage = new LoginPage();
     const dashBoardPage = new DashboardPage();
     const addNewEmployeePage = new AddNewEmployeePage();
@@ -22,12 +16,12 @@ describe('Positive test for "add new employee" feature', () => {
         'max': 32
     });
 
-    it('should run positive test for "add new employee" form',function () {
+    it('should run positive test for "add new employee" form use after',function () {
         cy.visit('/');
         loginPage.loginToApplication(Cypress.env('login'), Cypress.env('password'));
         dashBoardPage.clickOnAddEmployeeButton();
         addNewEmployeePage.addNewRecord(firstName, lastName, dependantNum).then(id => {
-            cy.wrap(id).as('id');
+            cy.wrap([id]).as('recordId');
             dashBoardPage.checkNewRecordOnUI(id, firstName, lastName, dependantNum);
         });
     });
