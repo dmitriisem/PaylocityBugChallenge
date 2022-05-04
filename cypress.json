@@ -1,0 +1,9 @@
+{
+  "baseUrl": "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/Account/Login/",
+  "env": {
+    "apiURL": "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees/",
+    "login": "TestUser203",
+    "password": "/^%j(ogZ63O4"
+  },
+  "watchForFileChanges": false
+}

@@ -1,9 +1,10 @@
 describe('GET one record', () => {
     it('should get only one selected record', function () {
         cy.postNewRecord().then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
+            cy.wrap(id).as('recordId');
             cy.request({
                 method: "GET",
-                url: Cypress.env('apiURL')+id,
+                url: Cypress.env('apiURL') + id,
                 headers: {
                     Authorization: "Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080",
                 }
@@ -19,4 +20,10 @@ describe('GET one record', () => {
             })
         })
     });
+
+    afterEach(() => {
+        cy.get('@recordId').then(value => {
+            cy.deleteRecord(value);
+        })
+    })
 })
