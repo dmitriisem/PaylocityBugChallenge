@@ -1,19 +1,12 @@
 describe('GET one record', () => {
 
-    afterEach(() => {
-        cy.get('@recordId').then(value => {
-            cy.deleteRecord(value);
-        });
-    });
-
-    it('should get only one selected record', function () {
-        cy.postNewRecord().then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
-            cy.wrap(id).as('recordId');
+    it('should test GET API request use before use after', function () {
+        cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
             cy.request({
                 method: "GET",
                 url: Cypress.env('apiURL') + id,
                 headers: {
-                    Authorization: "Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080",
+                    Authorization: Cypress.env('token')
                 }
             }).then(response => {
                 expect(response.status).to.eq(200);

@@ -1,4 +1,3 @@
-import promisify from 'cypress-promise'
 
 const addNewEmployeePageLocators = {
     firstNameField: "#firstName",

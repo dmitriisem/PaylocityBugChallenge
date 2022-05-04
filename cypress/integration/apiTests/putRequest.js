@@ -2,19 +2,6 @@ import faker from "@faker-js/faker";
 
 describe('PUT request via Cypress', () => {
 
-    beforeEach(() => {
-        cy.postNewRecord().then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
-            const data = [id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net];
-            cy.wrap(data).as('recordId');
-        })
-    })
-
-    afterEach(() => {
-        cy.get('@recordId').then(([id])=> {
-            cy.deleteRecord(id);
-        })
-    })
-
     it('should test PUT request', function () {
 
         cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
@@ -50,8 +37,8 @@ describe('PUT request via Cypress', () => {
                 cy.calcBenefitsCost(newBody.dependants).then( benefitCost => {
                     expect((response.body.benefitsCost).toFixed(2)).to.eq(benefitCost);
                     expect(+((response.body.net).toFixed(2))).to.eq(2000 - benefitCost);
-                })
-            })
-        })
+                });
+            });
+        });
     });
-})
+});
