@@ -9,14 +9,13 @@ const addNewEmployeePageLocators = {
 
 export class AddNewEmployeePage {
 
-    async addNewRecord(firstName, lastName, dependantNum) {
+    addNewRecord(firstName, lastName, dependantNum) {
         cy.intercept('POST', '**/employees').as('postEmployee');
         cy.get(addNewEmployeePageLocators.firstNameField).type(firstName);
         cy.get(addNewEmployeePageLocators.lastNameField).type(lastName);
         cy.get(addNewEmployeePageLocators.dependantsField).type(dependantNum);
         cy.get(addNewEmployeePageLocators.addButton).click();
         cy.wait('@postEmployee');
-        const x = await promisify(cy.get('@postEmployee').its('response.body.id'));
         cy.get('@postEmployee').then((xhr) => {
             expect(xhr.response.statusCode).to.eq(200);
             expect(xhr.response.body.firstName).to.eq(firstName);
@@ -28,7 +27,9 @@ export class AddNewEmployeePage {
                 expect((xhr.response.body.benefitsCost).toFixed(2)).to.eq(benefitsCost);
                 expect(+(xhr.response.body.net.toFixed(2))).to.eq(2000 - benefitsCost);
             })
+            const xx = xhr.response.body.id;
+            cy.wrap(xx).as('id');
         })
-        return x;
+        return cy.get('@id');
     }
 }

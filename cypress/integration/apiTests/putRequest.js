@@ -1,9 +1,23 @@
 import faker from "@faker-js/faker";
 
 describe('PUT request via Cypress', () => {
-    it('should test PUT request', function () {
-        cy.postNewRecord().then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
 
+    beforeEach(() => {
+        cy.postNewRecord().then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
+            const data = [id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net];
+            cy.wrap(data).as('recordId');
+        })
+    })
+
+    afterEach(() => {
+        cy.get('@recordId').then(([id])=> {
+            cy.deleteRecord(id);
+        })
+    })
+
+    it('should test PUT request', function () {
+
+        cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
             const newFirstName = faker.name.firstName();
             const newLastName = faker.name.lastName();
             const newDependantNum = faker.datatype.number({
@@ -22,7 +36,7 @@ describe('PUT request via Cypress', () => {
                 method: "PUT",
                 url: Cypress.env('apiURL'),
                 headers: {
-                    'Authorization': "Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080",
+                    'Authorization': Cypress.env('token'),
                     'Content-Type': "application/json"
                 },
                 body: newBody
@@ -31,7 +45,13 @@ describe('PUT request via Cypress', () => {
                 expect(response.body.firstName).to.eq(newBody.firstName);
                 expect(response.body.lastName).to.eq(newBody.lastName);
                 expect(response.body.dependants).to.eq(newBody.dependants);
+                expect(response.body.salary).to.eq(salary);
+                expect(response.body.gross).to.eq(grossPay);
+                cy.calcBenefitsCost(newBody.dependants).then( benefitCost => {
+                    expect((response.body.benefitsCost).toFixed(2)).to.eq(benefitCost);
+                    expect(+((response.body.net).toFixed(2))).to.eq(2000 - benefitCost);
+                })
             })
-        });
-    })
+        })
+    });
 })

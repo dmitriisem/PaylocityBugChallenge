@@ -5,8 +5,8 @@ describe('DELETE request via Cypress', ()=> {
                 method: "DELETE",
                 url: Cypress.env('apiURL')+id,
                 headers: {
-                    'Authorization': "Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080",
-                },
+                    'Authorization': Cypress.env('token')
+                }
             }).then(response => {
                 expect(response.status).to.eq(200);
                 expect(response.body).to.be.empty;

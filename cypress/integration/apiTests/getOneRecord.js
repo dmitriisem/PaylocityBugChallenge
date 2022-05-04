@@ -1,4 +1,11 @@
 describe('GET one record', () => {
+
+    afterEach(() => {
+        cy.get('@recordId').then(value => {
+            cy.deleteRecord(value);
+        });
+    });
+
     it('should get only one selected record', function () {
         cy.postNewRecord().then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
             cy.wrap(id).as('recordId');
@@ -17,13 +24,7 @@ describe('GET one record', () => {
                 expect(response.body.gross).to.eq(grossPay);
                 expect(response.body.benefitsCost).to.eq(benefitsCost);
                 expect(response.body.net).to.eq(net);
-            })
-        })
+            });
+        });
     });
-
-    afterEach(() => {
-        cy.get('@recordId').then(value => {
-            cy.deleteRecord(value);
-        })
-    })
-})
+});
