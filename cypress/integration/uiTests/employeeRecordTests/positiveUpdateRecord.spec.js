@@ -26,7 +26,7 @@ describe('Tests to update record', () => {
             dashBoardPage.clickUpdateRecordButton(id);
             updateRecordPage.updateRecord(newFirstName, newLastName, newDependantNum);
             // Need to wait until record is updated on the page
-            cy.wait(350);
+            cy.wait(750);
             // Asserting results
             dashBoardPage.checkNewRecordOnUI(id, newFirstName, newLastName, newDependantNum);
             // Deleting record via API After Each deleteRecord method

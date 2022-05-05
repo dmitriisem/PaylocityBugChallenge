@@ -17,7 +17,7 @@ describe('Test to check delete record feature', () => {
             dashboardPage.clickDeleteRecordButton(id);
             deleteRecordPage.clickDeleteButton();
             // Need to wait until page updated
-            cy.wait(350);
+            cy.wait(750);
             // Checking if record deleted via UI
             dashboardPage.checkDeletedRecord(id);
         });
