@@ -19,7 +19,7 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 beforeEach(() => {
-    if ((Cypress.currentTest.title).includes('use before')) {
+    if ((Cypress.currentTest.title).includes('%use before%')) {
         cy.postNewRecord().then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
             const data = [id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net];
             cy.wrap(data).as('recordId');
@@ -28,7 +28,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-    if ((Cypress.currentTest.title).includes('use after')) {
+    if ((Cypress.currentTest.title).includes('%use after%')) {
         cy.get('@recordId').then(([value]) => {
             cy.deleteRecord(value);
         });

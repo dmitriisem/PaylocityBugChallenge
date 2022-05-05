@@ -2,7 +2,7 @@ import faker from "@faker-js/faker";
 
 describe('PUT request via Cypress', () => {
 
-    it('should test PUT request use before use after', function () {
+    it('should test PUT request %use before% %use after%', function () {
 
         cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
             const newFirstName = faker.name.firstName();
@@ -34,7 +34,7 @@ describe('PUT request via Cypress', () => {
                 expect(response.body.dependants).to.eq(newBody.dependants);
                 expect(response.body.salary).to.eq(salary);
                 expect(response.body.gross).to.eq(grossPay);
-                cy.calcBenefitsCost(newBody.dependants).then( benefitCost => {
+                cy.calcBenefitsCost(newBody.dependants).then(benefitCost => {
                     expect((response.body.benefitsCost).toFixed(2)).to.eq(benefitCost);
                     expect(+((response.body.net).toFixed(2))).to.eq(2000 - benefitCost);
                 });

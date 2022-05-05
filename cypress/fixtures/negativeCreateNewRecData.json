@@ -1,0 +1,28 @@
+{
+  "testData": [
+    {
+      "field": "UserName",
+      "firstName": "ThisFirstNameFieldContainsMoreThan50Symbols23434567890123456789012345678901",
+      "lastName": "Semenov",
+      "dependants": 1,
+      "statusCode": 400,
+      "errorMessage": "The field FirstName must be a string with a maximum length of 50."
+    },
+    {
+      "field": "LastName",
+      "firstName": "Dmitrii",
+      "lastName": "ThisLastNameFieldContainsMoreThan50Symbols23434567890123456789012345678901",
+      "dependants": 1,
+      "statusCode": 400,
+      "errorMessage": "The field LastName must be a string with a maximum length of 50."
+    },
+    {
+      "field": "Dependants",
+      "firstName": "Dmitrii",
+      "lastName": "Semenov",
+      "dependants": 33,
+      "statusCode": 400,
+      "errorMessage": "The field Dependants must be between 0 and 32."
+    }
+  ]
+}

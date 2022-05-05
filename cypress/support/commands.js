@@ -41,7 +41,7 @@ Cypress.Commands.add('postNewRecord', () => {
     };
 
     const headers = {
-        'Authorization': "Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080",
+        'Authorization': Cypress.env('token'),
         'Content-Type': "application/json"
     };
 
@@ -80,7 +80,7 @@ Cypress.Commands.add('deleteRecord', (recordId) => {
         method: "DELETE",
         url: Cypress.env('apiURL')+recordId,
         headers: {
-            'Authorization': "Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080",
+            'Authorization': Cypress.env('token'),
         },
     }).then(response => {
         expect(response.status).to.eq(200);

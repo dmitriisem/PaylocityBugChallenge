@@ -17,7 +17,7 @@ describe('Positive test for "add new employee" feature', () => {
         'max': 32
     });
 
-    it('should run positive test for "add new employee" form use after',function () {
+    it('should run positive test for "add new employee" form %use after%',function () {
         cy.visit('/');
         loginPage.loginToApplication(Cypress.env('login'), Cypress.env('password'));
         dashBoardPage.clickOnAddEmployeeButton();

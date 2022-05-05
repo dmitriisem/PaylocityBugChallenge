@@ -1,6 +1,6 @@
 describe('GET one record', () => {
 
-    it('should test GET API request use before use after', function () {
+    it('should test GET API request %use before% %use after%', function () {
         cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
             cy.request({
                 method: "GET",
