@@ -20,7 +20,7 @@ import faker from "@faker-js/faker";
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-// BeforeEach hook to create a new record before API test if called
+// BeforeEach hook to create a new record before API test. Works only if called
 beforeEach(() => {
 
     if ((Cypress.currentTest.title).includes('%use before%')) {
@@ -36,7 +36,7 @@ beforeEach(() => {
     }
 });
 
-// AfterEach hook to delete a record after API test if called
+// AfterEach hook to delete a record after API test. Works only if called
 afterEach(() => {
 
     if ((Cypress.currentTest.title).includes('%use after%')) {
