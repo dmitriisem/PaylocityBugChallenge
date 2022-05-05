@@ -1,7 +1,9 @@
 describe('GET one record', () => {
 
     it('should test GET API request %use before% %use after%', function () {
+        // Creating new record via API Before Each postNewRecord method
         cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
+            // Sending GET request
             cy.request({
                 method: "GET",
                 url: Cypress.env('apiURL') + id,
@@ -9,6 +11,7 @@ describe('GET one record', () => {
                     Authorization: Cypress.env('token')
                 }
             }).then(response => {
+                // Asserting response
                 expect(response.status).to.eq(200);
                 expect(response.body.firstName).to.eq(firstName);
                 expect(response.body.lastName).to.eq(lastName);
