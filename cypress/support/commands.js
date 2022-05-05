@@ -19,20 +19,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import faker from "@faker-js/faker";
 
 Cypress.Commands.add('calcBenefitsCost', (dependantNum) => {
     cy.wrap((((1000 + dependantNum * 500) / 26).toFixed(2)))
 });
 
-Cypress.Commands.add('postNewRecord', () => {
-
-    const firstName = faker.name.firstName();
-    const lastName = faker.name.lastName();
-    const dependantNum = faker.datatype.number({
-        'min': 0,
-        'max': 32
-    });
+Cypress.Commands.add('postNewRecord', (firstName, lastName, dependantNum) => {
 
     const body = {
         "firstName": firstName,
@@ -63,9 +55,9 @@ Cypress.Commands.add('postNewRecord', () => {
         });
 
         const id = response.body.id;
-        const firstName = response.body.firstName;
-        const lastName = response.body.lastName;
-        const dependantsNum = response.body.dependants;
+        const firstName = body.firstName
+        const lastName = body.lastName;
+        const dependantsNum = body.dependants;
         const salary = response.body.salary;
         const grossPay = response.body.gross;
         const benefitsCost = response.body.benefitsCost;

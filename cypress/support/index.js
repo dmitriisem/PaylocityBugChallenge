@@ -15,12 +15,21 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import faker from "@faker-js/faker";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 beforeEach(() => {
     if ((Cypress.currentTest.title).includes('%use before%')) {
-        cy.postNewRecord().then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
+
+        const firstName = faker.name.firstName();
+        const lastName = faker.name.lastName();
+        const dependantNum = faker.datatype.number({
+            'min': 0,
+            'max': 32
+        });
+
+        cy.postNewRecord(firstName, lastName, dependantNum).then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
             const data = [id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net];
             cy.wrap(data).as('recordId');
         });
