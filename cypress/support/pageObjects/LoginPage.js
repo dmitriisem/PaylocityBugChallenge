@@ -10,5 +10,5 @@ export class LoginPage {
         cy.get(loginPageLocators.usernameField).type(username);
         cy.get(loginPageLocators.passwordField).type(password);
         cy.get(loginPageLocators.logInButton).click();
-    }
+    };
 }

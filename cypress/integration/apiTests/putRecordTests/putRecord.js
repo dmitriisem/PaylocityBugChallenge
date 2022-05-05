@@ -4,7 +4,10 @@ describe('PUT request via Cypress', () => {
 
     it('should test PUT request %use before% %use after%', function () {
 
+        // Creating new record via API Before Each postNewRecord method
         cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
+
+            // Creating new data for form fields
             const newFirstName = faker.name.firstName();
             const newLastName = faker.name.lastName();
             const newDependantNum = faker.datatype.number({
@@ -12,6 +15,7 @@ describe('PUT request via Cypress', () => {
                 'max': 32
             });
 
+            // Adding new data to request body
             const newBody = {
                 "id": id,
                 "firstName": newFirstName,
@@ -19,6 +23,7 @@ describe('PUT request via Cypress', () => {
                 "dependants": newDependantNum
             }
 
+            // Sending PUT request
             cy.request({
                 method: "PUT",
                 url: Cypress.env('apiURL'),
@@ -28,6 +33,7 @@ describe('PUT request via Cypress', () => {
                 },
                 body: newBody
             }).then(response => {
+                // Asserting response
                 expect(response.status).to.eq(200);
                 expect(response.body.firstName).to.eq(newBody.firstName);
                 expect(response.body.lastName).to.eq(newBody.lastName);
@@ -37,6 +43,7 @@ describe('PUT request via Cypress', () => {
                 cy.calcBenefitsCost(newBody.dependants).then(benefitCost => {
                     expect((response.body.benefitsCost).toFixed(2)).to.eq(benefitCost);
                     expect(+((response.body.net).toFixed(2))).to.eq(2000 - benefitCost);
+                    // Deleting record via API After Each deleteRecord method
                 });
             });
         });

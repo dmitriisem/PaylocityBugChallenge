@@ -20,15 +20,16 @@ describe('Tests to update record', () => {
 
         // Creating new record via API
         cy.get('@recordId').then(([id]) => {
-            // Login to application via UI
+            // Login to application via UI using custom command
             cy.loginViaUi(Cypress.env('login'), Cypress.env('password'));
             // Updating record
             dashBoardPage.clickUpdateRecordButton(id);
             updateRecordPage.updateRecord(newFirstName, newLastName, newDependantNum);
             // Need to wait until record is updated on the page
-            cy.wait(250);
+            cy.wait(350);
             // Asserting results
             dashBoardPage.checkNewRecordOnUI(id, newFirstName, newLastName, newDependantNum);
+            // Deleting record via API After Each deleteRecord method
         });
     });
 });

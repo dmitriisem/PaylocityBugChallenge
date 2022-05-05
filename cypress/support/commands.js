@@ -21,10 +21,13 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import {loginPageLocators} from "./pageObjects/LoginPage";
 
+// Custom command to calculate benefits cost. Returns number
 Cypress.Commands.add('calcBenefitsCost', (dependantNum) => {
+
     cy.wrap((((1000 + dependantNum * 500) / 26).toFixed(2)))
 });
 
+// Custom command to create a new record via API. Returns array with data from response
 Cypress.Commands.add('postNewRecord', (firstName, lastName, dependantNum) => {
 
     const body = {
@@ -68,7 +71,9 @@ Cypress.Commands.add('postNewRecord', (firstName, lastName, dependantNum) => {
     });
 });
 
+// Custom command to delete record via API
 Cypress.Commands.add('deleteRecord', (recordId) => {
+
     cy.request({
         method: "DELETE",
         url: Cypress.env('apiURL')+recordId,
@@ -79,11 +84,13 @@ Cypress.Commands.add('deleteRecord', (recordId) => {
         expect(response.status).to.eq(200);
         expect(response.body).to.be.empty;
     })
-})
+});
 
+// Custom command to login to application via UI
 Cypress.Commands.add('loginViaUi', (username, password) => {
+
     cy.visit('/');
     cy.get(loginPageLocators.usernameField).type(username);
     cy.get(loginPageLocators.passwordField).type(password);
     cy.get(loginPageLocators.logInButton).click();
-})
+});
