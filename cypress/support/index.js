@@ -29,10 +29,7 @@ beforeEach(() => {
             'max': 32
         });
 
-        cy.postNewRecord(firstName, lastName, dependantNum).then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
-            const data = [id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net];
-            cy.wrap(data).as('recordId');
-        });
+        cy.postNewRecord(firstName, lastName, dependantNum).as('recordId');
     }
 });
 
