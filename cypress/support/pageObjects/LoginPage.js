@@ -1,4 +1,4 @@
-const loginPageLocators = {
+export const loginPageLocators = {
     usernameField: "#Username",
     passwordField: "#Password",
     logInButton: ".btn"

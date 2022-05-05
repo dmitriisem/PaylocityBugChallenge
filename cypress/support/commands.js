@@ -19,6 +19,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import {loginPageLocators} from "./pageObjects/LoginPage";
 
 Cypress.Commands.add('calcBenefitsCost', (dependantNum) => {
     cy.wrap((((1000 + dependantNum * 500) / 26).toFixed(2)))
@@ -78,4 +79,11 @@ Cypress.Commands.add('deleteRecord', (recordId) => {
         expect(response.status).to.eq(200);
         expect(response.body).to.be.empty;
     })
+})
+
+Cypress.Commands.add('loginViaUi', (username, password) => {
+    cy.visit('/');
+    cy.get(loginPageLocators.usernameField).type(username);
+    cy.get(loginPageLocators.passwordField).type(password);
+    cy.get(loginPageLocators.logInButton).click();
 })
