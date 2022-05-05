@@ -24,6 +24,8 @@ describe('Positive test for "add new employee" feature', () => {
         // Login to application using PageObject method
         cy.visit('/');
         loginPage.loginToApplication(Cypress.env('login'), Cypress.env('password'));
+        // Checking dashboard page elements
+        dashBoardPage.checkDashboardPageElements();
         // Adding new record to the table
         dashBoardPage.clickOnAddEmployeeButton();
         addNewEmployeePage.addNewRecord(firstName, lastName, dependantNum).then(id => {

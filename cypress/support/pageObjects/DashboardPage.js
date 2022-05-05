@@ -1,5 +1,11 @@
 const dashBoardLocators = {
-    addEmployeeButton: "#add"
+    addEmployeeButton: "#add",
+    logo: ".navbar-brand",
+    logoLink: "/Prod/Benefits",
+    logOutButton: "Log Out",
+    logOutButtonLink: "/Prod/Account/LogOut",
+    copyright: "footer>div",
+    copyrightText: "© 2022 - Paylocity"
 };
 
 export class DashboardPage {
@@ -22,9 +28,27 @@ export class DashboardPage {
         });
     };
 
-    clickUpdateRecordButton (id) {
+    clickUpdateRecordButton(id) {
         cy.get('tbody').contains('tr', id).then(tableRow => {
             cy.wrap(tableRow).find('.fa-edit').click();
         });
+    };
+
+    clickDeleteRecordButton(id) {
+        cy.get('tbody').contains('tr', id).then(tableRow => {
+            cy.wrap(tableRow).find('.fa-times').click();
+        });
+    };
+
+    checkDeletedRecord(id) {
+        cy.get('tbody').find('tr').each(tableRow => {
+            cy.wrap(tableRow).find('td').should('not.contain', id)
+        });
+    };
+
+    checkDashboardPageElements() {
+        cy.get(dashBoardLocators.logo).should('have.attr', 'href', dashBoardLocators.logoLink);
+        cy.contains(dashBoardLocators.logOutButton).should('have.attr', 'href', dashBoardLocators.logOutButtonLink);
+        cy.get(dashBoardLocators.copyright).should('contain.text', dashBoardLocators.copyrightText);
     };
 }
