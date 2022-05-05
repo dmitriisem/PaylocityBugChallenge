@@ -1,4 +1,4 @@
-import {testData} from '/cypress/integration/apiTests/postNewRecordTests/supportData/negativeCreateNewRecData.json'
+import {testData} from '/cypress/integration/apiTests/employeeRecordTests/supportData/negativeCreateNewRecData.json'
 
 describe('This is should be data driver API test', () => {
 
