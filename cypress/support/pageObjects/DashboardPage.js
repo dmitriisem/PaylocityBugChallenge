@@ -15,6 +15,7 @@ export class DashboardPage {
     };
 
     checkNewRecordOnUI(id, name, lastname, dependantNum) {
+        cy.wait(500);
         cy.calcBenefitsCost(dependantNum).then(benefitsCost => {
             cy.get('tbody').contains('tr', id).then(tableRow => {
                 cy.wrap(tableRow).find('td').eq(1).should('contain', name);
@@ -41,8 +42,9 @@ export class DashboardPage {
     };
 
     checkDeletedRecord(id) {
+        cy.wait(500);
         cy.get('tbody').find('tr').each(tableRow => {
-            cy.wrap(tableRow).find('td').should('not.contain', id)
+            cy.wrap(tableRow).find('td').should('not.contain', id);
         });
     };
 
