@@ -1,4 +1,4 @@
 /node_modules/
-/cypress/screenshots/
+screenshots/
 /cypress/videos/
 /test-reports/

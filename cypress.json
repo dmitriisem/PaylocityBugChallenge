@@ -1,10 +1,12 @@
 {
   "baseUrl": "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/Account/Login/",
   "reporter": "mochawesome",
+  "screenshotsFolder": "screenshots/",
+  "video": false,
   "reporterOptions": {
     "reportFilename": "[status]_[datetime]-[name]-report",
     "timestamp": "mmm dd yyyy HH:MM:ss",
-    "reportDir": "test-reports",
+    "reportDir": "test-reports/",
     "overwrite": false,
     "html": true,
     "json": false

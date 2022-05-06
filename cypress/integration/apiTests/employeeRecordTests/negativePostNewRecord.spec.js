@@ -34,6 +34,7 @@ describe('Negative data - driven tests using POST request via Cypress', () => {
                 } catch (errorMessage) {
                 } finally {
                     if (response.status !== td.statusCode) {
+                        // Deleting record via custom command
                         cy.deleteRecord(response.body.id);
                         // Workaround to throw an error in Cypress. Do not touch!
                         cy.get('Throw Assertion error here', {timeout: 100})
