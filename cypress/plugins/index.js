@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-const fs = require('fs')
+const fs = require('fs');
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -19,26 +19,22 @@ const fs = require('fs')
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
   on('after:screenshot', (details) => {
-    console.log(details)
-      // print all details to terminal
-      const fileDate = details.takenAt.replace("/:/g",".") +".png"
+  
+    const fileDate = details.takenAt.replace('/:/g', '.') + '.png';
 
-      const folderName = details.specName.split('/')[0]
-      
-      const specName = details.specName.split('/')[1]
+    const folderName = details.specName.split('/')[0];
 
-      const newPath = `screenshots/${folderName}/${specName}/` + fileDate;
+    const specName = details.specName.split('/')[1];
 
-      return new Promise((resolve, reject) => {
-          // fs.rename moves the file to the existing directory 'new/path/to'
-          // and renames the image to 'screenshot.png'
-          fs.rename(details.path, newPath, (err) => {
-              if (err) return reject(err)
+    const newPath = `screenshots/${folderName}/${specName}/` + fileDate;
 
-              // because we renamed and moved the image, resolve with the new path
-              // so it is accurate in the test results
-              resolve({ path: newPath })
-          })
-      })
-  })
-}
+    return new Promise((resolve, reject) => {
+
+      fs.rename(details.path, newPath, (err) => {
+        if (err) return reject(err);
+
+        resolve({ path: newPath });
+      });
+    });
+  });
+};
