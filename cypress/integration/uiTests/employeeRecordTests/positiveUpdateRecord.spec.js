@@ -2,7 +2,7 @@ import {DashboardPage} from "../../../support/pageObjects/DashboardPage";
 import {UpdateRecordPage} from "../../../support/pageObjects/UpdateRecordPage";
 import faker from "@faker-js/faker";
 
-describe('Tests to update record', () => {
+describe('Tests to to test update record feature', () => {
 
     // Creating objects of PageObject classes
     const dashBoardPage = new DashboardPage();

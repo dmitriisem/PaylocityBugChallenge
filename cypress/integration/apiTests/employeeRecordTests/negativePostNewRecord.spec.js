@@ -1,6 +1,6 @@
 import {testData} from '/cypress/integration/apiTests/employeeRecordTests/supportData/negativeCreateNewRecData.json'
 
-describe('This is should be data driver API test', () => {
+describe('Negative data - driven tests using POST request via Cypress', () => {
 
     // Using forEach method for Data-Driven testing and loads data from negativeCreateNewRecData.json file
     testData.forEach(td => {

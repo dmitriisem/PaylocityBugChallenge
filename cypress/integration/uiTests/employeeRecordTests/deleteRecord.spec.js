@@ -1,7 +1,7 @@
 import {DashboardPage} from "../../../support/pageObjects/DashboardPage";
 import {DeleteRecordPage} from "../../../support/pageObjects/DeleteRecordPage";
 
-describe('Test to check delete record feature', () => {
+describe('Test to check delete record feature via UI', () => {
 
     // Creating objects of PageObject classes
     const dashboardPage = new DashboardPage();

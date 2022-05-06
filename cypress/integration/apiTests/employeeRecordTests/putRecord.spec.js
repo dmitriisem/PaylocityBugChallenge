@@ -21,7 +21,7 @@ describe('PUT request via Cypress', () => {
                 "firstName": newFirstName,
                 "lastName": newLastName,
                 "dependants": newDependantNum
-            }
+            };
 
             // Sending PUT request
             cy.request({

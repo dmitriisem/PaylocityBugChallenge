@@ -1,6 +1,7 @@
-describe('GET one record', () => {
+describe('GET one record via Cypress', () => {
 
     it('should test GET API request %use before% %use after%', function () {
+        
         // Creating new record via API Before Each postNewRecord method
         cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
             // Sending GET request

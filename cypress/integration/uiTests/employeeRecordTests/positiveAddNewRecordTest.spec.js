@@ -3,7 +3,6 @@ import {DashboardPage} from "../../../support/pageObjects/DashboardPage";
 import {AddNewEmployeePage} from "../../../support/pageObjects/AddNewEmployeePage";
 import faker from "@faker-js/faker";
 
-
 describe('Positive test for "add new employee" feature', () => {
 
     // Creating objects of PageObject classes
