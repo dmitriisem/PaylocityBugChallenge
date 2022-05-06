@@ -2,10 +2,10 @@ import faker from "@faker-js/faker";
 
 describe('PUT request via Cypress', () => {
 
-    it('should test PUT request %use before% %use after%', function () {
+    it('should test PUT request', function () {
 
-        // Creating new record via API Before Each postNewRecord method
-        cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
+        // Creating new record via custom function
+        cy.postNewRecord().then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
 
             // Creating new data for form fields
             const newFirstName = faker.name.firstName();
@@ -43,9 +43,10 @@ describe('PUT request via Cypress', () => {
                 cy.calcBenefitsCost(newBody.dependants).then(benefitCost => {
                     expect((response.body.benefitsCost).toFixed(2)).to.eq(benefitCost);
                     expect(+((response.body.net).toFixed(2))).to.eq(2000 - benefitCost);
-                    // Deleting record via API After Each deleteRecord method
                 });
             });
+            // Deleting record via API After Each deleteRecord method
+            cy.deleteRecord(id);
         });
     });
 });

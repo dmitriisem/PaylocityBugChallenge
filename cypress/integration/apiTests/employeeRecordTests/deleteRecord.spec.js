@@ -1,9 +1,9 @@
 describe('DELETE request via Cypress', () => {
 
-    it('should test DELETE request %use before%', function () {
+    it('should test DELETE request', function () {
 
-        // Creating new record via API Before Each postNewRecord method
-        cy.get('@recordId').then(([id]) => {
+         // Creating new record via custom function
+        cy.postNewRecord().then(([id]) => {
             // Sending DELETE request
             cy.request({
                 method: "DELETE",

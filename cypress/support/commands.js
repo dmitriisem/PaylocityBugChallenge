@@ -20,6 +20,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import {loginPageLocators} from "./pageObjects/LoginPage";
+import faker from "@faker-js/faker";
 
 // Custom command to calculate benefits cost. Returns number
 Cypress.Commands.add('calcBenefitsCost', (dependantNum) => {
@@ -28,7 +29,14 @@ Cypress.Commands.add('calcBenefitsCost', (dependantNum) => {
 });
 
 // Custom command to create a new record via API. Returns array with data from response
-Cypress.Commands.add('postNewRecord', (firstName, lastName, dependantNum) => {
+Cypress.Commands.add('postNewRecord', () => {
+
+    const firstName = faker.name.firstName();
+    const lastName = faker.name.lastName();
+    const dependantNum = faker.datatype.number({
+        'min': 0,
+        'max': 32
+    });
 
     const body = {
         "firstName": firstName,
@@ -59,14 +67,14 @@ Cypress.Commands.add('postNewRecord', (firstName, lastName, dependantNum) => {
         });
 
         const id = response.body.id;
-        const firstName = body.firstName
-        const lastName = body.lastName;
-        const dependantsNum = body.dependants;
+        const firstN = body.firstName
+        const lastN = body.lastName;
+        const dependantsN = body.dependants;
         const salary = response.body.salary;
         const grossPay = response.body.gross;
         const benefitsCost = response.body.benefitsCost;
         const net = response.body.net;
-        const arr = [id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net];
+        const arr = [id, firstN, lastN, dependantsN, salary, grossPay, benefitsCost, net];
         cy.wrap(arr)
     });
 });

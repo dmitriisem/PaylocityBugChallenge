@@ -16,10 +16,10 @@ describe('Tests to to test update record feature', () => {
         'max': 32
     });
 
-    it('should create a new record via API and then update it via UI %use before% %use after%', function () {
+    it('should create a new record via API and then update it via UI', function () {
 
-        // Creating new record via API
-        cy.get('@recordId').then(([id]) => {
+        // Creating new record via custom method
+        cy.postNewRecord().then(([id]) => {
             // Login to application via UI using custom command
             cy.loginViaUi(Cypress.env('login'), Cypress.env('password'));
             // Updating record
@@ -27,7 +27,8 @@ describe('Tests to to test update record feature', () => {
             updateRecordPage.updateRecord(newFirstName, newLastName, newDependantNum);
             // Asserting results
             dashBoardPage.checkNewRecordOnUI(id, newFirstName, newLastName, newDependantNum);
-            // Deleting record via API After Each deleteRecord method
+            // Deleting record via custom method
+            cy.deleteRecord(id);
         });
     });
 });

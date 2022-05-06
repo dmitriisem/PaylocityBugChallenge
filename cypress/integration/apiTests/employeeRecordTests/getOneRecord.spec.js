@@ -1,9 +1,9 @@
 describe('GET one record via Cypress', () => {
 
-    it('should test GET API request %use before% %use after%', function () {
+    it('should test GET API request', function () {
         
-        // Creating new record via API Before Each postNewRecord method
-        cy.get('@recordId').then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
+         // Creating new record via custom function
+        cy.postNewRecord().then(([id, firstName, lastName, dependantsNum, salary, grossPay, benefitsCost, net]) => {
             // Sending GET request
             cy.request({
                 method: "GET",
@@ -22,6 +22,8 @@ describe('GET one record via Cypress', () => {
                 expect(response.body.benefitsCost).to.eq(benefitsCost);
                 expect(response.body.net).to.eq(net);
             });
+            // Deleting record via custom method
+            cy.deleteRecord(id);
         });
     });
 });

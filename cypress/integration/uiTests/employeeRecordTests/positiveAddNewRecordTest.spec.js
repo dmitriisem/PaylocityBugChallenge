@@ -18,7 +18,7 @@ describe('Positive test for "add new employee" feature', () => {
         'max': 32
     });
 
-    it('should run positive test for "add new employee" form %use after%',function () {
+    it('should run positive test for "add new employee" form',function () {
 
         // Login to application using PageObject method
         cy.visit('/');
@@ -32,6 +32,8 @@ describe('Positive test for "add new employee" feature', () => {
             cy.wrap([id]).as('recordId');
             // Asserting new record data via UI
             dashBoardPage.checkNewRecordOnUI(id, firstName, lastName, dependantNum);
+            // Deleting record via custom method
+            cy.deleteRecord(id);
         });
     });
 });

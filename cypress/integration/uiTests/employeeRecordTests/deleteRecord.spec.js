@@ -7,10 +7,10 @@ describe('Test to check delete record feature via UI', () => {
     const dashboardPage = new DashboardPage();
     const deleteRecordPage = new DeleteRecordPage();
 
-    it('should delete record and check results via UI %use before%', function () {
+    it('should delete record and check results via UI', function () {
 
         // Creating new record via API Before Each postNewRecord method
-        cy.get('@recordId').then( ([id]) => {
+        cy.postNewRecord().then( ([id]) => {
             // Login to application via UI using custom command
             cy.loginViaUi(Cypress.env('login'), Cypress.env('password'));
             // Deleting record
