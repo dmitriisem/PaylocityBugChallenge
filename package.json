@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:run": "cypress run",
-    "cy:run:regression": "npx cypress run --spec \"cypress/integration/testSuites/regression.spec.js\" --browser chrome"
+    "cy:regression": "npx cypress run --spec \"cypress/integration/testSuites/regression.spec.js\""
   },
   "keywords": [],
   "author": "",
