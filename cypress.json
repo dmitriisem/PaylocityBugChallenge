@@ -1,5 +1,14 @@
 {
   "baseUrl": "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/Account/Login/",
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportFilename": "[status]_[datetime]-[name]-report",
+    "timestamp": "mmm dd yyyy HH:MM:ss",
+    "reportDir": "test-reports",
+    "overwrite": false,
+    "html": true,
+    "json": false
+  },
   "env": {
     "apiURL": "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/api/employees/",
     "token": "Basic VGVzdFVzZXIyMDM6L14laihvZ1o2M080",
