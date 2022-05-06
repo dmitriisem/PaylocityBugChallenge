@@ -24,14 +24,12 @@ import faker from "@faker-js/faker";
 beforeEach(() => {
 
     if ((Cypress.currentTest.title).includes('%use before%')) {
-
         const firstName = faker.name.firstName();
         const lastName = faker.name.lastName();
         const dependantNum = faker.datatype.number({
             'min': 0,
             'max': 32
         });
-
         cy.postNewRecord(firstName, lastName, dependantNum).as('recordId');
     }
 });
