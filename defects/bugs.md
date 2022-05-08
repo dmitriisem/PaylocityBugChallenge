@@ -59,7 +59,7 @@ First name and Last name are displayed incorrectly. Column "First Name" shows ac
 
 **Attachments:**
 
-![Preview](defects/images/Bug1.gif)
+![Preview](images/Bug1.gif)
 
 * * *  
 ### Bug 2. The size of table fields changes after adding an employee
@@ -86,7 +86,7 @@ Table field names are shifted after adding a new employee to the table.
 
 **Attachments:**
 
-![Preview](defects/images/Bug2.gif)
+![Preview](images/Bug2.gif)
 
 * * *  
 ### Bug 3. UI doesn't show an error when trying to add more than 32 Dependants
@@ -113,7 +113,7 @@ Error message does not appear.
 
 **Attachments:**
 
-![Preview](defects/images/Bug3.gif)
+![Preview](images/Bug3.gif)
 
 * * *  
 ### Bug 4. No error message when trying to add a negative or non-integer number in the "Dependants" field
@@ -142,7 +142,7 @@ Error message does not appear and a new employee is added to the table if a zero
 
 **Attachments:**
 
-![Preview](defects/images/Bug4.gif)
+![Preview](images/Bug4.gif)
 
 * * *  
 ### Bug 5. No error message shown when using special characters in the "Last Name" and "First Name" fields
@@ -169,7 +169,7 @@ Error message does not appear and a new employee is added to the table.
 
 **Attachments:**
 
-![Preview](defects/images/Bug5.gif)
+![Preview](images/Bug5.gif)
 
 * * *  
 ### Bug 6. No error message shown when using too long string in the "Last Name" and "First Name" fields
@@ -196,7 +196,7 @@ Error message does not appear.
 
 **Attachments:**
 
-![Preview](defects/images/Bug6.gif)
+![Preview](images/Bug6.gif)
 
 * * *  
 ### Bug 7. The aesthetic appearance of the table is deformed when too long string used for "Last Name" or "First Name" fields
@@ -223,7 +223,7 @@ Size of tables and the general view of the table changes.
 
 **Attachments:**
 
-![Preview](defects/images/Bug7.gif)
+![Preview](images/Bug7.gif)
 
 * * *  
 ### Bug 8. No error message shown when "Last Name" or "First Name" field is empty
@@ -250,7 +250,7 @@ Error message does not appear.
 
 **Attachments:**
 
-![Preview](defects/images/Bug8.gif)
+![Preview](images/Bug8.gif)
 
 * * *  
 ### Bug 9. No error message shown when "Dependants" field is empty
@@ -277,7 +277,7 @@ Error message does not appear and a new employee is added to the table with 0 de
 
 **Attachments:**
 
-![Preview](defects/images/Bug9.gif)
+![Preview](images/Bug9.gif)
 
 * * *  
 ### Bug 10. No UI or API informational message when creating/modifying/deleting a record
@@ -304,7 +304,7 @@ Informational message not shown.
 
 **Attachments:**
 
-![Preview](defects/images/Bug10.gif)
+![Preview](images/Bug10.gif)
 
 * * *  
 ### Bug 11. App randomly logs out current user
@@ -328,7 +328,7 @@ User logged out from the app and API "401" HTTP response code shown.
 
 **Attachments:**
 
-![Preview](defects/images/Bug11.gif)
+![Preview](images/Bug11.gif)
 
 * * *  
 ### Bug 12. API HTTP code 500 when adding Not A Number to request body
@@ -357,7 +357,7 @@ HTTP Code "500" shown and no error message.
 
 **Attachments:**
 
-![Preview](defects/images/Bug12.gif)
+![Preview](images/Bug12.gif)
 
 * * *  
 ### Bug 13. API allows to add additional fields to POST and PUT requests body and not throws an error
@@ -387,7 +387,7 @@ HTTP Code "200" shown and no error message.
 
 **Attachments:**
 
-![Preview](defects/images/Bug13.gif)
+![Preview](images/Bug13.gif)
 
 * * *  
 ### Bug 14. API allows to DELETE the same record multiple times
@@ -420,7 +420,7 @@ Success "200" code shown.
 
 **Attachments:**
 
-![Preview](images/Bug14.gif)
+![Preview](Bug14.gif)
 
 * * *  
 ### Bug 15. API allows to use GET method on deleted record
@@ -455,7 +455,7 @@ Success "200" code end empty response body shown.
 
 **Attachments:**
 
-![Preview](defects/images/Bug15.gif)
+![Preview](images/Bug15.gif)
 
 * * *  
 ### Bug 16. API allows to use PUT method on deleted record
@@ -495,4 +495,4 @@ Success "200" code end a response body with empty "salary" and "gross" fields + 
 
 **Attachments:**
 
-![Preview](defects/images/Bug16.gif)
+![Preview](images/Bug16.gif)
