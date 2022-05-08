@@ -420,7 +420,7 @@ Success "200" code shown.
 
 **Attachments:**
 
-![Preview](Bug14.gif)
+![Preview](images/Bug14.gif)
 
 * * *  
 ### Bug 15. API allows to use GET method on deleted record
