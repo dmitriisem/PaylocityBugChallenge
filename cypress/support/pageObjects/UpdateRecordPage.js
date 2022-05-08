@@ -2,15 +2,24 @@ const updateEmployeePageLocators = {
     firstNameField: "#firstName",
     lastNameField: "#lastName",
     dependantsField: "#dependants",
-    updateButton: "#updateEmployee"
+    updateButton: "#updateEmployee",
+    pageName: "h5:eq(0)"
 };
 
 export class UpdateRecordPage {
 
     updateRecord (newFistName, newLastName, newDependantNum) {
-        cy.get(updateEmployeePageLocators.firstNameField).clear().type(newFistName);
-        cy.get(updateEmployeePageLocators.lastNameField).clear().type(newLastName);
-        cy.get(updateEmployeePageLocators.dependantsField).clear().type(newDependantNum);
+        cy.typeText(updateEmployeePageLocators.firstNameField, newFistName);
+        cy.typeText(updateEmployeePageLocators.lastNameField, newLastName);
+        cy.typeText(updateEmployeePageLocators.dependantsField, newDependantNum);
         cy.get(updateEmployeePageLocators.updateButton).click();
-    };
+    }
+
+    checkUpdateRecordPage() {
+        cy.get(updateEmployeePageLocators.pageName, {timeout: 100}).should('have.text', 'Update Employee');
+    }
+
+    checkErrorMessage(errorMessage) {
+        cy.contains(errorMessage).should('be.visible');
+    }
 }

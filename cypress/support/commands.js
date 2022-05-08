@@ -102,3 +102,16 @@ Cypress.Commands.add('loginViaUi', (username, password) => {
     cy.get(loginPageLocators.passwordField).type(password);
     cy.get(loginPageLocators.logInButton).click();
 });
+
+Cypress.Commands.add('typeText', (locator, text) => {
+    cy.get(locator).clear().type(text);
+})
+
+Cypress.Commands.add('loginWithSession', (username, password) => {
+    cy.session([username, password], () => {
+      cy.visit('/');
+      cy.typeText(loginPageLocators.usernameField, username);
+      cy.typeText(loginPageLocators.passwordField, password);
+      cy.get(loginPageLocators.logInButton).click();
+    });
+  });

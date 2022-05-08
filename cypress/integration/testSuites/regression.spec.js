@@ -9,3 +9,4 @@ import '/cypress/integration/apiTests/employeeRecordTests/negativePostNewRecord.
 import '/cypress/integration/uiTests/employeeRecordTests/deleteRecord.spec'
 import '/cypress/integration/uiTests/employeeRecordTests/positiveAddNewRecordTest.spec'
 import '/cypress/integration/uiTests/employeeRecordTests/positiveUpdateRecord.spec'
+import '/cypress/integration/uiTests/employeeRecordTests/negativeUpdateRecord.spec'

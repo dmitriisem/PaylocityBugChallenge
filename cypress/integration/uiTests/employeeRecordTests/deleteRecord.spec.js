@@ -9,7 +9,8 @@ describe('Test to check delete record feature via UI', () => {
     const deleteRecordPage = new DeleteRecordPage();
     const loginPage = new LoginPage();
 
-    it('should delete record and check results via UI', function () {
+    // This test is flaky. Added retries option.
+    it('should delete record and check results via UI', {retries: 2}, function () {
 
         // Creating new record via API Before Each postNewRecord method
         cy.postNewRecord().then( ([id]) => {

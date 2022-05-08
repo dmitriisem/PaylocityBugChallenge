@@ -3,16 +3,17 @@ const addNewEmployeePageLocators = {
     firstNameField: "#firstName",
     lastNameField: "#lastName",
     dependantsField: "#dependants",
-    addButton: "#addEmployee"
+    addButton: "#addEmployee",
+    formNameLocator: "div>h5:contains('Add Employee')"
 }
 
 export class AddNewEmployeePage {
 
     addNewRecord(firstName, lastName, dependantNum) {
         cy.intercept('POST', '**/employees').as('postEmployee');
-        cy.get(addNewEmployeePageLocators.firstNameField).type(firstName);
-        cy.get(addNewEmployeePageLocators.lastNameField).type(lastName);
-        cy.get(addNewEmployeePageLocators.dependantsField).type(dependantNum);
+        cy.typeText(addNewEmployeePageLocators.firstNameField, firstName);
+        cy.typeText(addNewEmployeePageLocators.lastNameField, lastName);
+        cy.typeText(addNewEmployeePageLocators.dependantsField, dependantNum);
         cy.get(addNewEmployeePageLocators.addButton).click();
         cy.wait('@postEmployee');
         cy.get('@postEmployee').then((xhr) => {

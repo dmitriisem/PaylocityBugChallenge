@@ -1,3 +1,5 @@
+import faker from "@faker-js/faker";
+
 const dashBoardLocators = {
     addEmployeeButton: "#add",
     logo: ".navbar-brand",
@@ -5,14 +7,15 @@ const dashBoardLocators = {
     logOutButton: "Log Out",
     logOutButtonLink: "/Prod/Account/LogOut",
     copyright: "footer>div",
-    copyrightText: "© 2022 - Paylocity"
+    copyrightText: "© 2022 - Paylocity",
+    pageUrl: "Prod/Benefits"
 };
 
 export class DashboardPage {
 
     clickOnAddEmployeeButton() {
         cy.get(dashBoardLocators.addEmployeeButton).click();
-    };
+    }
 
     checkNewRecordOnUI(id, name, lastname, dependantNum) {
         cy.wait(500);
@@ -27,30 +30,43 @@ export class DashboardPage {
                 cy.wrap(tableRow).find('td').eq(7).should('contain', 2000 - benefitsCost);
             });
         });
-    };
+    }
 
     clickUpdateRecordButton(id) {
         cy.get('tbody').contains('tr', id).then(tableRow => {
             cy.wrap(tableRow).find('.fa-edit').click();
         });
-    };
+    }
 
     clickDeleteRecordButton(id) {
         cy.get('tbody').contains('tr', id).then(tableRow => {
             cy.wrap(tableRow).find('.fa-times').click();
         });
-    };
+    }
 
     checkDeletedRecord(id) {
         cy.wait(500);
         cy.get('tbody').find('tr').each(tableRow => {
             cy.wrap(tableRow).find('td').should('not.contain', id);
         });
-    };
+    }
 
     checkDashboardPageElements() {
+        cy.url().should('include', dashBoardLocators.pageUrl);
         cy.get(dashBoardLocators.logo).should('have.attr', 'href', dashBoardLocators.logoLink);
         cy.contains(dashBoardLocators.logOutButton).should('have.attr', 'href', dashBoardLocators.logOutButtonLink);
         cy.get(dashBoardLocators.copyright).should('contain.text', dashBoardLocators.copyrightText);
-    };
+    }
+
+    clickUpdateRandomRecord() {
+        cy.get('tbody').find('tr').then(tableRows => {
+            const randomRow = faker.datatype.number({
+                'min': 0,
+                'max': tableRows.length-1
+            });
+            cy.wrap(tableRows).eq(randomRow).then(row => {
+                cy.wrap(row).find('.fa-edit').click();
+            });
+        });
+    }
 }

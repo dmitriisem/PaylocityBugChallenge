@@ -18,7 +18,8 @@ describe('Tests to to test update record feature', () => {
         'max': 32
     });
 
-    it('should create a new record via API and then update it via UI', function () {
+    // This test is flaky. Added retries option.
+    it('should create a new record via API and then update it via UI', {retries: 2}, function () {
 
         // Creating new record via custom method
         cy.postNewRecord().then(([id]) => {

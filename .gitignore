@@ -2,3 +2,4 @@
 screenshots/
 /cypress/videos/
 /test-reports/
+.DS_Store

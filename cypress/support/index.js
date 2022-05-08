@@ -28,11 +28,15 @@ before(() => {
       Authorization: Cypress.env('token'),
     },
   }).then((response) => {
+    cy.log('Clean Up table before tests')
     cy.get(response.body).each((record) => {
       cy.deleteRecord(record.id);
     });
+    cy.log('Clean up finished');
+    cy.log('Creating new records for future tests');
+    for(let i=0; i<=3; i++) {
       cy.postNewRecord();
+    }
+    cy.log('Tests set up finished');
   });
 });
-
-

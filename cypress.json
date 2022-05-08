@@ -3,6 +3,7 @@
   "reporter": "mochawesome",
   "screenshotsFolder": "screenshots/",
   "video": false,
+  "experimentalSessionAndOrigin": true,
   "reporterOptions": {
     "reportFilename": "[status]_[datetime]-[name]-report",
     "timestamp": "mmm dd yyyy HH:MM:ss",
