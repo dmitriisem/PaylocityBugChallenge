@@ -27,4 +27,4 @@ npm run cy:regression:chrome
 ```
 
 ## Here you can see defects that were found as a result of testing Paylocity Benefits Dashboard application:
-[Defects](defects/bugs.md)
+[Paylocity Benefits Dashboard defects](defects/bugs.md)
