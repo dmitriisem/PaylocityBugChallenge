@@ -34,3 +34,5 @@ before(() => {
       cy.postNewRecord();
   });
 });
+
+
