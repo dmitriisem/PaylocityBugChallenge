@@ -7,8 +7,6 @@ export const loginPageLocators = {
 export class LoginPage {
 
     loginToApplication(username, password){
-        cy.get(loginPageLocators.usernameField).type(username);
-        cy.get(loginPageLocators.passwordField).type(password);
-        cy.get(loginPageLocators.logInButton).click();
+        cy.loginViaUi(username, password);
     };
 }

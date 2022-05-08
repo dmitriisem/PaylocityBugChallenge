@@ -39,6 +39,30 @@
       "dependants": 15,
       "statusCode": 400,
       "errorMessage": "The field LastName must be a string with a maximum length of 50."
+    },
+    {
+      "field": "FirstName",
+      "firstName": "",
+      "lastName": "Semenov",
+      "dependants": 30,
+      "statusCode": 400,
+      "errorMessage": "The FirstName field is required."
+    },
+    {
+      "field": "LastName",
+      "firstName": "Dmitrii",
+      "lastName": "",
+      "dependants": 12,
+      "statusCode": 400,
+      "errorMessage": "The LastName field is required."
+    },
+    {
+      "field": "Dependants",
+      "firstName": "Dmitrii",
+      "lastName": "Semenov",
+      "dependants": "",
+      "statusCode": 400,
+      "errorMessage": "The Dependants field is required."
     }
   ]
 }

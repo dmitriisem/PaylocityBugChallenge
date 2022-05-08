@@ -45,8 +45,6 @@ describe('PUT request via Cypress', () => {
                     expect(+((response.body.net).toFixed(2))).to.eq(2000 - benefitCost);
                 });
             });
-            // Deleting record via API After Each deleteRecord method
-            cy.deleteRecord(id);
         });
     });
 });

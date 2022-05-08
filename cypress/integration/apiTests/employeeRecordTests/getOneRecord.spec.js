@@ -22,8 +22,6 @@ describe('GET one record via Cypress', () => {
                 expect(response.body.benefitsCost).to.eq(benefitsCost);
                 expect(response.body.net).to.eq(net);
             });
-            // Deleting record via custom method
-            cy.deleteRecord(id);
         });
     });
 });

@@ -27,19 +27,9 @@ describe('Negative data - driven tests using POST request via Cypress', () => {
                 body: body,
                 failOnStatusCode: false
             }).then(response => {
-                // Asserting response. Needs try/catch block to delete record if test failed and record was added to the table
-                try {
+                // Asserting response
                     expect(response.status).to.eq(td.statusCode);
                     expect(response.body[0].errorMessage).to.eq(td.errorMessage);
-                } catch (errorMessage) {
-                } finally {
-                    if (response.status !== td.statusCode) {
-                        // Deleting record via custom command
-                        cy.deleteRecord(response.body.id);
-                        // Workaround to throw an error in Cypress. Do not touch!
-                        cy.get('Throw Assertion error here', {timeout: 100})
-                    };
-                };
             });
         });
     });

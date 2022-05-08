@@ -14,7 +14,23 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// CleanUP before every test suite run. Creates 1 new record for GET Records test to pass.
+before(() => {
+  cy.request({
+    method: 'GET',
+    url: Cypress.env('apiURL'),
+    headers: {
+      Authorization: Cypress.env('token'),
+    },
+  }).then((response) => {
+    cy.get(response.body).each((record) => {
+      cy.deleteRecord(record.id);
+    });
+      cy.postNewRecord();
+  });
+});

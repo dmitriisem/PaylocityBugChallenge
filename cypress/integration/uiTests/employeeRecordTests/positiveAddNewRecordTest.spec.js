@@ -5,11 +5,6 @@ import faker from "@faker-js/faker";
 
 describe('Positive test for "add new employee" feature', () => {
 
-    // Before Each hook in case we have more UI tests here
-    beforeEach( () => {
-        cy.visit('/');
-    })
-
     // Creating objects of PageObject classes
     const loginPage = new LoginPage();
     const dashBoardPage = new DashboardPage();
@@ -34,8 +29,6 @@ describe('Positive test for "add new employee" feature', () => {
         addNewEmployeePage.addNewRecord(firstName, lastName, dependantNum).then(id => {
             // Asserting new record data via UI
             dashBoardPage.checkNewRecordOnUI(id, firstName, lastName, dependantNum);
-            // Deleting record via custom method
-            cy.deleteRecord(id);
         });
     });
 });
